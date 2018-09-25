@@ -27,7 +27,7 @@ class Hello extends React.Component<Props, State> {
         return (
             <div className="hello">
               <div className="greeting">
-                Hello {name + getExclamationMarks(this.state.currentEnthusiasm)}
+                Hello {this.props.name + getExclamationMarks(this.state.currentEnthusiasm)}
               </div>
               <button onClick={this.onDecrement}>-</button>
               <button onClick={this.onIncrement}>+</button>
@@ -39,20 +39,6 @@ class Hello extends React.Component<Props, State> {
         this.setState({currentEnthusiasm: currentEnthusiasm});
     }
 }
-
-// function Hello({name, enthusiasmLevel = 1}: Props) {
-//     if(enthusiasmLevel < 0) {
-//         throw new Error('You could be a little more enthusiastic');
-//     }
-
-//     return (
-//         <div className="hello">
-//             <div className="greeting">
-//                 Hello {name + getExclamationMarks(enthusiasmLevel)}
-//             </div>
-//         </div>
-//     );
-// }
 
 export default Hello;
 
